@@ -3,13 +3,11 @@ import type { ItemsResponse } from '@app-pages/api/items';
 import { FC, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import Image from 'next/image';
-import Link from 'next/link';
 import Head from 'next/head';
-import { startCase } from 'lodash';
-import { appUrl } from '@app-env';
 import Breadcrumbs from '@app-components/breadcrumbs';
 import SearchItem from '@app-components/search-item';
+import { startCase } from 'lodash';
+import { appUrl } from '@app-env';
 
 export type SearchResultsProps = {
   items: ItemsResponse;
