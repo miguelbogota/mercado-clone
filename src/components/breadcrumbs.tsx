@@ -27,7 +27,7 @@ const Wrapper = styled.div({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-start',
-  margin: '0.7rem 0',
+  margin: '0.9rem 0',
   padding: '0.3rem 0',
 });
 

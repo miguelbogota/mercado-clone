@@ -6,6 +6,8 @@ import { appUrl } from '@app-env';
 import Image from 'next/image';
 import Head from 'next/head';
 import Breadcrumbs from '@app-components/breadcrumbs';
+import styled from '@emotion/styled';
+import { getColor } from '@app-components/styling/colors';
 
 export type ProductDetailsProps = {
   item: ItemDetailsResponse;
@@ -29,15 +31,24 @@ const ProductDetails: FC<ProductDetailsProps> = props => {
         <meta property="og:site_name" content="Mercado Clone" />
         <meta name="twitter:image:alt" content={props.item.item.title} />
       </Head>
-      <div>
-        <Breadcrumbs items={props.item.categories} />
+
+      <Breadcrumbs items={props.item.categories} />
+
+      <ItemWrapper>
         <h1>{props.item.item.title}</h1>
         <Image src={props.item.item.picture} alt="Image" width={600} height={600} />
         <p>{props.item.item.description}</p>
-      </div>
+      </ItemWrapper>
     </>
   );
 };
+
+/** Styles for the wrapper of the items. */
+const ItemWrapper = styled.div({
+  backgroundColor: getColor('secondaryBackgroundColor'),
+  borderRadius: 3,
+  padding: '1rem',
+});
 
 /** Server side renders all the search. */
 export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ctx => {

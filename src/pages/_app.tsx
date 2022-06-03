@@ -29,9 +29,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         <SearchBar />
 
         <Container>
-          <Loading>
-            <Component {...pageProps} />
-          </Loading>
+          <Loading />
+          <Component {...pageProps} />
         </Container>
       </main>
     </>

@@ -17,6 +17,7 @@ const Container = styled.div<{
   margin: '0 auto',
   padding: '0 1rem',
   boxSizing: 'border-box',
+  position: 'relative',
   [breakpoints.down('md')]: {
     padding: '0 0.5rem',
   },

@@ -47,9 +47,8 @@ const getItemsWithSearch = async (
 
   // Gets the first 4 categories with most results to use as breadcrumbs.
   const categories =
-    response.data.available_filters
-      .find(filter => filter.id === 'category')
-      ?.values.sort((a, b) => a.results - b.results)
+    response.data.available_filters[0]?.values
+      .sort((a, b) => a.results - b.results)
       .map(value => value.name)
       .slice(0, 4) ?? [];
 

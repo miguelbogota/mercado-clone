@@ -1,12 +1,14 @@
 import type { GetServerSideProps } from 'next';
 import type { ItemsResponse } from '@app-pages/api/items';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
+import { startCase } from 'lodash';
 import { useRouter } from 'next/router';
+import styled from '@emotion/styled';
 import axios from 'axios';
 import Head from 'next/head';
 import Breadcrumbs from '@app-components/breadcrumbs';
 import SearchItem from '@app-components/search-item';
-import { startCase } from 'lodash';
+import { getColor } from '@app-components/styling/colors';
 import { appUrl } from '@app-env';
 
 export type SearchResultsProps = {
@@ -19,13 +21,6 @@ export type SearchResultsProps = {
 const SearchResults: FC<SearchResultsProps> = props => {
   const router = useRouter();
 
-  // Prevents direct access to the page without the "search" query.
-  useEffect(() => {
-    if (!router.query.search && router.isReady) {
-      router.push('/');
-    }
-  }, [router.isReady, router.query.search]);
-
   return (
     <>
       <Head>
@@ -34,18 +29,34 @@ const SearchResults: FC<SearchResultsProps> = props => {
 
       <Breadcrumbs items={props.items.categories} />
 
-      <div>
-        {props.items.items.map(item => (
-          <SearchItem key={item.id} item={item} />
+      <ItemsWrapper>
+        {props.items.items.map((item, index) => (
+          <>
+            {index !== 0 && <Divider />}
+            <SearchItem key={item.id} item={item} />
+          </>
         ))}
 
-        {props.items.items.length === 0 && (
-          <p>No results for &quot;{startCase(router.query.search as string)}&quot;</p>
-        )}
-      </div>
+        {props.items.items.length === 0 && <p>No results for &quot;{router.query.search}&quot;</p>}
+      </ItemsWrapper>
     </>
   );
 };
+
+/** Styles for the wrapper of the items. */
+const ItemsWrapper = styled.div({
+  backgroundColor: getColor('secondaryBackgroundColor'),
+  borderRadius: 3,
+  padding: '1rem',
+});
+
+/** Divider to separate the items. */
+const Divider = styled.hr({
+  border: 0,
+  borderTop: '1px solid',
+  borderColor: getColor('primaryBackgroundColor'),
+  margin: '1rem 0',
+});
 
 /** Server side renders all the search. */
 export const getServerSideProps: GetServerSideProps<SearchResultsProps> = async ctx => {

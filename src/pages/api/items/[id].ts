@@ -1,10 +1,10 @@
-import { meliApiUrl } from '@app-env';
-import { AppError } from 'app-error';
-import axios from 'axios';
-import { MercadoLibreCategoryResponse } from 'mercado-libre-category-response';
-import { MercadoLibreItemDescriptionResponse } from 'mercado-libre-item-description-response';
-import { MercadoLibreItemResponse } from 'mercado-libre-item-response';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import type { MercadoLibreCategoryResponse } from 'mercado-libre-category-response';
+import type { MercadoLibreItemDescriptionResponse } from 'mercado-libre-item-description-response';
+import type { MercadoLibreItemResponse } from 'mercado-libre-item-response';
+import type { AppError } from 'app-error';
+import axios from 'axios';
+import { meliApiUrl } from '@app-env';
 
 export type ItemDetailsResponse = {
   author: {

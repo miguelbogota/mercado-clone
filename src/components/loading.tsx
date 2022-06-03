@@ -1,20 +1,29 @@
-import { FC, PropsWithChildren, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import styled from '@emotion/styled';
 import { getColor } from './styling/colors';
 
 /**
  * Loading wrapper to show a loading screen while the page is changing.
  */
-const Loading: FC<PropsWithChildren<{}>> = ({ children }) => {
+const Loading: FC = () => {
   const router = useRouter();
 
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = (url: string) => url !== router.asPath && setLoading(true);
-    const handleComplete = (url: string) => url !== router.asPath && setLoading(false);
+    const handleStart = (url: string) => {
+      if (url !== router.asPath) {
+        setLoading(true);
+        document.body.style.overflow = 'hidden';
+      }
+    };
+    const handleComplete = (url: string) => {
+      if (url !== router.asPath) {
+        setLoading(false);
+        document.body.style.overflow = 'unset';
+      }
+    };
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
@@ -27,27 +36,21 @@ const Loading: FC<PropsWithChildren<{}>> = ({ children }) => {
     };
   }, []);
 
-  return !loading ? (
-    <>{children}</>
-  ) : (
-    <>
-      <Head>
-        <title>Loading...</title>
-      </Head>
-      <LoadingText>Loading....</LoadingText>
-    </>
-  );
+  return !loading ? null : <LoadingText>Loading....</LoadingText>;
 };
 
 /** Styles for the Loading screen. */
 const LoadingText = styled.h1({
   width: '100%',
-  display: 'flex',
-  justifyContent: 'flex-start',
+  height: '100%',
+  maxHeight: '100vh',
+  position: 'absolute',
+  zIndex: 1000,
   alignItems: 'center',
   fontSize: '1.2em',
   fontWeight: 400,
   color: getColor('secondaryTextColor'),
+  backgroundColor: getColor('primaryBackgroundColor'),
   margin: 0,
   padding: '1.2rem',
 });
