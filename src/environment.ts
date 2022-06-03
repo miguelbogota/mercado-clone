@@ -1,7 +1,7 @@
 /// Use this file to define global environment variables.
 
 /** Url to MercadoLibre's API */
-export const meliApiUrl = process.env.API_URL as string;
+export const meliApiUrl = process.env.MELI_API_URL as string;
 
 /** Vercel url or localhost in development. */
 export const baseAppUrl = (process.env.BASE_URL || process.env.VERCEL_URL) as string;

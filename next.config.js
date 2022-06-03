@@ -8,7 +8,7 @@ const meliApiUrl = process.env.MELI_API_URL;
 /** @type {import('next').NextConfig} */
 const nextConfig = withPWA({
   env: {
-    API_URL: process.env.MELI_API_URL,
+    MELI_API_URL: process.env.MELI_API_URL,
     BASE_URL: process.env.BASE_URL,
   },
   images: {
