@@ -18,15 +18,14 @@ Mercado Clone es un proyecto usando la API de Mercado Libre, este proyecto se ut
 
 ### Estructura del Proyecto:
 
-```javascript
--public - // Archivos publicos.
-  src - // Proyecto.
-  components - // Todos los componentes basicos del proyecto.
-  pages - // Paginas para mostrar en la web (Cada archivo representa una pagina).
-  api - // Endpoints para hacer las peticiones http.
-  test - // Testing del proyecto (Esta carpeta tiene la misma estructura que "src").
-  types; // Types para typescript globales.
-```
+    .
+    ├── public               # Archivos publicos.
+    ├── src                  # Proyecto.
+    │   ├──components        # Todos los componentes basicos del proyecto.
+    │   └── pages            # Paginas a mostrar (Cada archivo representa una pagina).
+    │       └── api          # Endpoints para hacer las peticiones http.
+    ├── test                 # Testing (Misma estructura que "src").
+    └── types                # Types para typescript globales.
 
 ## Autor
 
