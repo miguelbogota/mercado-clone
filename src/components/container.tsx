@@ -1,4 +1,4 @@
-import { breakpoints } from './styling/breakpoints';
+import { breakpoints } from '@app-components/styling/breakpoints';
 import styled from '@emotion/styled';
 
 /**

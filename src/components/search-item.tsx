@@ -4,8 +4,8 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
 import toPrice from '@app-utils/to-price';
-import { getColor } from './styling/colors';
-import { breakpoints } from './styling/breakpoints';
+import { getColor } from '@app-components/styling/colors';
+import { breakpoints } from '@app-components/styling/breakpoints';
 
 export type SearchItemProps = {
   item: ItemsResponse['items'][number];

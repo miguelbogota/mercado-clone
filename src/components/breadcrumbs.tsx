@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
-import { getColor } from './styling/colors';
-import { breakpoints } from './styling/breakpoints';
+import { getColor } from '@app-components/styling/colors';
+import { breakpoints } from '@app-components/styling/breakpoints';
 
 export type BreadcrumbsProps = {
   items: string[];
@@ -14,8 +14,12 @@ const Breadcrumbs: FC<BreadcrumbsProps> = props => {
   return (
     <Wrapper>
       {props.items.map((category, index) => (
-        <Category key={index}>
-          {index !== 0 && <span className="material-symbols-outlined">chevron_right</span>}
+        <Category key={index} role="link">
+          {index !== 0 && (
+            <span className="material-symbols-outlined" role="separator">
+              chevron_right
+            </span>
+          )}
           <p>{category}</p>
         </Category>
       ))}

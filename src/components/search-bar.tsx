@@ -1,10 +1,10 @@
 import { FC, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import { getColor } from './styling/colors';
+import { getColor } from '@app-components/styling/colors';
 import Image from 'next/image';
 import styled from '@emotion/styled';
-import Container from './container';
+import Container from '@app-components/container';
 import Link from 'next/link';
 
 /**
@@ -57,7 +57,7 @@ const SearchInput: FC = () => {
   return (
     <FormWrapper onSubmit={onSubmit}>
       <Input type="text" {...register('search')} placeholder="Nunca dejes de buscar" />
-      <Button type="submit">
+      <Button type="submit" role="button">
         <span className="material-symbols-outlined">search</span>
       </Button>
     </FormWrapper>

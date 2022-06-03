@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components - Breadcrumbs should render correctly 1`] = `
+<div>
+  <div
+    class="css-sjgsgk"
+  >
+    <span
+      class="css-1bmx41k"
+      role="link"
+    >
+      <p>
+        Home
+      </p>
+    </span>
+    <span
+      class="css-1bmx41k"
+      role="link"
+    >
+      <span
+        class="material-symbols-outlined"
+        role="separator"
+      >
+        chevron_right
+      </span>
+      <p>
+        Categories
+      </p>
+    </span>
+    <span
+      class="css-1bmx41k"
+      role="link"
+    >
+      <span
+        class="material-symbols-outlined"
+        role="separator"
+      >
+        chevron_right
+      </span>
+      <p>
+        Electronics
+      </p>
+    </span>
+  </div>
+</div>
+`;

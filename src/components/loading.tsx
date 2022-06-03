@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
-import { getColor } from './styling/colors';
+import { getColor } from '@app-components/styling/colors';
 
 /**
  * Loading wrapper to show a loading screen while the page is changing.
