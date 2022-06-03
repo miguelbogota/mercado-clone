@@ -16,6 +16,18 @@ const ProductDetails: FC<ProductDetailsProps> = props => {
     <>
       <Head>
         <title>{props.item.item.title} | Mercado Clone</title>
+
+        {/* Essential META Tags */}
+        <meta property="og:title" content={`${props.item.item.title} | Mercado Clone`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={props.item.item.picture} />
+        <meta property="og:url" content={`${appUrl}/items/${props.item.item.id}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        {/* Non-Essential, But Recommended */}
+        <meta property="og:description" content={props.item.item.description} />
+        <meta property="og:site_name" content="Mercado Clone" />
+        <meta name="twitter:image:alt" content={props.item.item.title} />
       </Head>
       <div>
         <Breadcrumbs items={props.item.categories} />

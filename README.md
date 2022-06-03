@@ -1,10 +1,11 @@
 # Mercado Clone
 
-Mercado Clone es un proyecto usando la API de Mercado Libre, este proyecto se utilizara como prueba tecnica para Mercado Libre.
+Mercado Clone es un proyecto usando la API de Mercado Libre, este proyecto se utilizará como prueba
+técnica para Mercado Libre.
 
 ### [Live Website](https://mercado-clone.vercel.app)
 
-### Technologias Usuadas:
+### Tecnologías Usadas:
 
 - [Next js](https://nextjs.org)
 - [Emotion](https://emotion.sh/docs/introduction)
@@ -19,10 +20,10 @@ Mercado Clone es un proyecto usando la API de Mercado Libre, este proyecto se ut
 ### Estructura del Proyecto:
 
     .
-    ├── public               # Archivos publicos.
+    ├── public               # Archivos públicos.
     ├── src                  # Proyecto.
-    │   ├──components        # Todos los componentes basicos del proyecto.
-    │   └── pages            # Paginas a mostrar (Cada archivo representa una pagina).
+    │   ├──components        # Todos los componentes básicos del proyecto.
+    │   └── pages            # Páginas a mostrar (Cada archivo representa una página).
     │       └── api          # Endpoints para hacer las peticiones http.
     ├── test                 # Testing (Misma estructura que "src").
     └── types                # Types para typescript globales.
@@ -31,7 +32,7 @@ Mercado Clone es un proyecto usando la API de Mercado Libre, este proyecto se ut
 
 _Miguel Bogota_
 
-#### Encuentrame en la web 🌎
+#### Encuéntrame en la web 🌎
 
 <p>
   <a href="https://dev.to/miguelbogota">

@@ -21,6 +21,7 @@ const Title = styled.h1({
   color: getColor('hintTextColor'),
   margin: 0,
   padding: 0,
+  userSelect: 'none',
 });
 
 export default Home;
