@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from 'next';
 import type { ItemsResponse } from '@app-pages/api/items';
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import { startCase } from 'lodash';
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
@@ -31,10 +31,10 @@ const SearchResults: FC<SearchResultsProps> = props => {
 
       <ItemsWrapper>
         {props.items.items.map((item, index) => (
-          <>
+          <Fragment key={item.id}>
             {index !== 0 && <Divider />}
-            <SearchItem key={item.id} item={item} />
-          </>
+            <SearchItem item={item} />
+          </Fragment>
         ))}
 
         {props.items.items.length === 0 && <p>No results for &quot;{router.query.search}&quot;</p>}

@@ -23,7 +23,7 @@ export type ItemDetailsResponse = {
     picture: string;
     condition: string;
     free_shipping: boolean;
-    sold_quantit: number;
+    sold_quantity: number;
     description: string;
   };
 };
@@ -68,7 +68,7 @@ const getItemDetails = async (
         picture: item.data.pictures[0].url,
         condition: item.data.condition,
         free_shipping: item.data.shipping.free_shipping,
-        sold_quantit: item.data.sold_quantity,
+        sold_quantity: item.data.sold_quantity,
         description: desc.data.plain_text,
       },
     };

@@ -13,7 +13,7 @@ const Container = styled.div<{
   flexDirection: props.dir ?? 'column',
   justifyContent: props.jus ?? 'flex-start',
   alignItems: props.ali ?? 'flex-start',
-  maxWidth: 1000,
+  maxWidth: 1100,
   margin: '0 auto',
   padding: '0 1rem',
   boxSizing: 'border-box',

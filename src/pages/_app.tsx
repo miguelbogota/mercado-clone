@@ -25,7 +25,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <main>
+      <main style={{ paddingBottom: '2rem' }}>
         <SearchBar />
 
         <Container>

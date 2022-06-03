@@ -33,6 +33,7 @@
       "*": ["types/*.d.ts"],
       "@app-components/*": ["src/components/*"],
       "@app-pages/*": ["src/pages/*"],
+      "@app-utils/*": ["src/utils/*"],
       "@app-env": ["src/environment"],
       "@app-test/*": ["test/*"]
     }

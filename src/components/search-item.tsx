@@ -3,7 +3,9 @@ import { FC } from 'react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
+import toPrice from '@app-utils/to-price';
 import { getColor } from './styling/colors';
+import { breakpoints } from './styling/breakpoints';
 
 export type SearchItemProps = {
   item: ItemsResponse['items'][number];
@@ -17,16 +19,14 @@ const SearchItem: FC<SearchItemProps> = ({ item }) => {
     <Link href={`/items/${item.id}`} passHref>
       <FlexLink>
         <ImageWrapper>
-          <Image src={item.picture} alt="Image" layout="fill" />
+          <Image src={item.picture} alt="Image" layout="fill" objectFit="contain" />
         </ImageWrapper>
 
         <FlexContainer>
           <div>
             <FlexContainer jus="flex-start" ali="center">
               {/* Price of the item */}
-              <Price>
-                $ {item.price.amount.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}
-              </Price>
+              <Price>{toPrice(item.price.amount)}</Price>
 
               {/* Shows Icon if free shipping applies. */}
               {item.free_shipping && (
@@ -65,6 +65,10 @@ const ImageWrapper = styled.div({
   height: 180,
   position: 'relative',
   flexShrink: 0,
+  [breakpoints.down('md')]: {
+    width: 100,
+    height: 100,
+  },
 });
 
 /** Container for the content. */
@@ -78,6 +82,17 @@ const FlexContainer = styled.div<{
   justifyContent: props.jus ?? 'space-between',
   alignItems: props.ali ?? 'flex-start',
 }));
+
+/** Item's price. */
+const Price = styled.p({
+  fontSize: '1.4rem',
+  fontWeight: 400,
+  margin: '1rem 0',
+
+  [breakpoints.down('md')]: {
+    fontSize: '1.28rem',
+  },
+});
 
 /** Free ship icon. */
 const FreeShipping = styled.span({
@@ -95,13 +110,10 @@ const Title = styled.h4({
   fontWeight: 300,
   maxWidth: '40ch',
   margin: 0,
-});
 
-/** Item's price. */
-const Price = styled.p({
-  fontSize: '1.4rem',
-  fontWeight: 400,
-  margin: '1rem 0',
+  [breakpoints.down('md')]: {
+    fontSize: '1rem',
+  },
 });
 
 /** Item's seller. */
@@ -110,6 +122,10 @@ const Seller = styled.p({
   fontWeight: 300,
   margin: '3rem 3rem 0 0',
   color: getColor('secondaryTextColor'),
+
+  [breakpoints.down('md')]: {
+    margin: 0,
+  },
 });
 
 export default SearchItem;

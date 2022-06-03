@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { getColor } from './styling/colors';
+import { breakpoints } from './styling/breakpoints';
 
 export type BreadcrumbsProps = {
   items: string[];
@@ -38,6 +39,10 @@ const Category = styled.span({
   justifyContent: 'flex-start',
   color: getColor('secondaryTextColor'),
   fontSize: '0.88rem',
+
+  [breakpoints.down('md')]: {
+    fontSize: '0.78rem',
+  },
 
   span: {
     cursor: 'default',
