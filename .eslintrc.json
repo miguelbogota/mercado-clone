@@ -1,0 +1,52 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint"],
+  "extends": ["eslint:recommended", "prettier", "next"],
+  // Disable some rule inside of tests.
+  "overrides": [
+    {
+      "files": ["*.test.ts", "*.test.tsx"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-console": "off"
+      }
+    }
+  ],
+  // Base rules for the project.
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "vars": "all",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "array-bracket-spacing": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
+    "comma-spacing": ["error", { "after": true, "before": false }],
+    "constructor-super": "error",
+    "curly": ["error", "all"],
+    "eol-last": ["error", "always"],
+    "key-spacing": ["error", { "afterColon": true, "beforeColon": false }],
+    "keyword-spacing": ["error", { "after": true, "before": true }],
+    "new-cap": "off",
+    "no-console": ["error", { "allow": ["error", "warn"] }],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
+    "no-trailing-spaces": "error",
+    "no-unused-vars": "off", // Off since "@typescript-eslint/no-unused-vars" is on.
+    "object-curly-spacing": ["error", "always"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "react-hooks/exhaustive-deps": "off",
+    "react/display-name": "error",
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+    "space-infix-ops": ["error", { "int32Hint": false }],
+    "spaced-comment": ["error", "always", { "markers": ["/"] }]
+  }
+}
