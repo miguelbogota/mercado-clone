@@ -1,6 +1,6 @@
 import { css, Global } from '@emotion/react';
-import colors, { getColor } from '@app-components/colors';
-import normalizeCss from '@app-components/normalize-css';
+import colors, { getColor } from '@app-components/styling/colors';
+import normalizeCss from '@app-components/styling/normalize-css';
 
 /** Default styles for the project. */
 const globalStyles = (
