@@ -78,6 +78,8 @@ y performante posible. Estas fueron algunas consideraciones que ayudaron a este 
   reader de tu navegador, también puedes navegar con el teclado).
 - Aunque no muchos se agregaron elementos graficos para tener una mejor experiencia UX (Loading
   states, not found page y responsiveness).
+- Se incluyo un pipeline sencillo con Vercel para hacer despliegues automáticos al hacer push en un
+  rama.
 
 ### Correr Localmente
 
