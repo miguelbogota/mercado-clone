@@ -25,6 +25,7 @@ const nextConfig = withPWA({
     includePaths: [path.join(__dirname, 'src/styles')],
   },
   reactStrictMode: true,
+  optimizeFonts: false,
   swcMinify: true,
 });
 
