@@ -120,12 +120,24 @@ De la siguiente manera se debería comportar él UI en desktop.
   alt="Desktop Performance"
 />
 
+#### Mobile
+
 De la siguiente manera se debería comportar él UI en mobile.
 
 <img
   width="400"
   src="assets/mobile-performance.gif"
   alt="Desktop Performance"
+/>
+
+#### Social Share
+
+De la siguiente manera se debería comportar cuando se comparte en redes sociales.
+
+<img
+  width="800"
+  src="assets/share-performance.gif"
+  alt="Share Performance"
 />
 
 ## Autor
